@@ -69,6 +69,7 @@ namespace Ipop.DhtNode {
 
       NodeConfig node_config = null;
       try {
+        Console.WriteLine("Brunet configuration file valid check result = " + ConfCheck.ConfValidCheck(node_config_path, ConfFileValidChk.ConfBrunet));
         node_config = Utils.ReadConfig<NodeConfig>(node_config_path);
         node_config.Path = node_config_path;
       } catch (Exception e) {
@@ -84,6 +85,7 @@ namespace Ipop.DhtNode {
 
       IpopConfig ipop_config = null;
       try {
+        Console.WriteLine("Ipop configuration file valid check result = " + ConfCheck.ConfValidCheck(ipop_config_path, ConfFileValidChk.ConfIpop));
         ipop_config = Utils.ReadConfig<IpopConfig>(ipop_config_path);
         ipop_config.Path = ipop_config_path;
       } catch (Exception e) {
@@ -99,6 +101,7 @@ namespace Ipop.DhtNode {
           return -1;
         }
         try {
+          Console.WriteLine("Dhcp configuration file valid check result = " + ConfCheck.ConfValidCheck(dhcp_config_path, ConfFileValidChk.ConfDhcp));
           dhcp_config = Utils.ReadConfig<DHCPConfig>(dhcp_config_path);
         } catch(Exception e) {
           Console.WriteLine("Invalid DhcpConfig file:");

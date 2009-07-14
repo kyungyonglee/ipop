@@ -44,6 +44,11 @@
         <include name="Brunet.Coordinate.dll"/>
         <include name="NDesk.Options.dll"/>
       </references>
+      <resources basedir="${lib.dir}">
+        <include name="DhcpServer.xsd"/>
+        <include name="Ipop.xsd"/>
+        <include name="../${brunet.dir}/lib/Brunet.xsd"/>
+      </resources>
     </csc>
     <mkdir dir="${bin.dir}" failonerror="true"/>
     <copy todir="${bin.dir}" failonerror="true">
